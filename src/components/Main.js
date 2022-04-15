@@ -23,12 +23,12 @@ class Main extends React.Component {
       >
         <article
           id="intro"
-          className={`${this.props.article === 'intro' ? 'active' : ''} ${
+          className={`${this.props.article === 'bond' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">Bond</h2>
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
@@ -57,12 +57,12 @@ class Main extends React.Component {
 
         <article
           id="work"
-          className={`${this.props.article === 'work' ? 'active' : ''} ${
+          className={`${this.props.article === 'borrow' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Work</h2>
+          <h2 className="major">Borrow</h2>
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
@@ -86,12 +86,12 @@ class Main extends React.Component {
 
         <article
           id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${
+          className={`${this.props.article === 'redeem' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">About</h2>
+          <h2 className="major">Redeem</h2>
           <span className="image main">
             <img src={pic03} alt="" />
           </span>
@@ -109,12 +109,12 @@ class Main extends React.Component {
 
         <article
           id="contact"
-          className={`${this.props.article === 'contact' ? 'active' : ''} ${
+          className={`${this.props.article === 'about' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-           <h2 className="major">Contact</h2>
+           <h2 className="major">About</h2>
           <span className="image main">
             <img src={pic03} alt="" />
           </span>
