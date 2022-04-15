@@ -10,7 +10,7 @@ const Header = props => (
       <div className="inner">
         <h1>nomDAO</h1>
         <p>
-          The Iron Bank of nomWorld
+          The Iron Bank of Wonderland
         </p>
       </div>
     </div>
