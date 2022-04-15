@@ -28,7 +28,7 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Trade</h2>
+          <h2 className="major">Intro</h2>
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
@@ -62,7 +62,7 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Loan</h2>
+          <h2 className="major">Work</h2>
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
@@ -114,8 +114,8 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Contact</h2>
-           <span className="image main">
+           <h2 className="major">Contact</h2>
+          <span className="image main">
             <img src={pic03} alt="" />
           </span>
           <p>
@@ -127,17 +127,6 @@ class Main extends React.Component {
             Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
             amet.
           </p>
-             <li>
-          <ul className="icons">
-            <li>
-              <a
-                href="https://twitter.com/TheNomDAO"
-                className="icon fa-twitter"
-              >
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-          </ul>
           {close}
         </article>
       </div>
