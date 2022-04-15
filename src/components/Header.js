@@ -19,7 +19,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('intro')
+              props.onOpenArticle('bond')
             }}
           >
             Bond
@@ -28,7 +28,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('work')
+              props.onOpenArticle('borrow')
             }}
           >
             Borrow
@@ -37,7 +37,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('about')
+              props.onOpenArticle('redeem')
             }}
           >
             Redeem
@@ -46,7 +46,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('contact')
+              props.onOpenArticle('about')
             }}
           >
             About
