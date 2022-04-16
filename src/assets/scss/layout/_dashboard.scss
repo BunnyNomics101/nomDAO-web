@@ -11,8 +11,7 @@
     --padding-spacing: 30px;
 
     width: 100%;
-    height: 100vh;
-    background-color: var(--background);
+    background-color: transparent;
     display: flex;
     flex-direction: column;
 
@@ -43,19 +42,26 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        button {
-            padding: 7px 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            height: fit-content;
-            box-shadow: none;
-            border: 1px solid white;
-            border-radius: 0;
-        }
     }
 
+    button.connect {
+        padding: 7px 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        height: fit-content;
+        box-shadow: none;
+        border: 1px solid white;
+        border-radius: 0;
+    }
+
+    .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        align-self: stretch;
+    }
 
 
     $add-button-size: 60px;
@@ -66,9 +72,6 @@
         height: $size;
         background-color: var(--secondary-color);
         border-radius: 50%;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -81,7 +84,7 @@
 
         &:hover {
             background-color: var(--secondary-hover);
-            cursor:pointer;
+            cursor: pointer;
         }
 
         &.shown {
@@ -193,16 +196,16 @@
         .loan-button {
             width: 60px;
             height: 60px;
-            background-color:var(--secondary-color);
+            background-color: var(--secondary-color);
             align-self: center;
             border-radius: 50%;
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
 
             .icon {
-                font-size:30px;
+                font-size: 30px;
             }
 
             &:hover {
@@ -231,6 +234,7 @@
         &::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
         transform : translateX(8px)
     }
 }
@@ -252,47 +256,72 @@
 }
 
 
-@media (max-width: 800px) {
-    #dashboard {
-        nav {
-            padding: 16px;
+#dashboard {
+    nav {
+        padding: 16px;
 
-            h1 {
-                font-size: 25px;
-            }
+        h1 {
+            font-size: 25px;
         }
+    }
 
-        #add-menu,
-        #add-button {
-            right: 16px;
-        }
+    #add-menu,
+    #add-button {
+        right: 16px;
+    }
 
-        #add-button {
-            bottom: 16px;
-        }
+    #add-button {
+        bottom: 16px;
+    }
 
-        #add-menu {
-            bottom: 92px;
-            max-width: calc(100% - 32px)
-        }
+    #add-menu {
+        bottom: 92px;
+        max-width: calc(100% - 32px)
+    }
 
-        #orders {
-            width: 90%;
-            .container{
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                .rows {
-                    margin : 0 30px;
-                    align-self: stretch;
-                    .row {
-                        margin: 10px 0;
-                    }
-                }
-                &>*{
+    #orders {
+        width: 90%;
+
+        .container {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            .rows {
+                margin: 0 30px;
+                align-self: stretch;
+
+                .row {
                     margin: 10px 0;
                 }
             }
+
+            &>* {
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px){
+    #main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: row;
+        align-items: stretch;
+        article.active {
+            max-height: 100vh;
+            height: 100vh;
+            display:flex !important;
+            align-items:stretch
+        }
+    }
+    #dashboard {
+        #switch button{
+            font-size: 20px;
         }
     }
 }

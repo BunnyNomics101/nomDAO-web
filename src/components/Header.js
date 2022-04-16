@@ -27,9 +27,13 @@ const Header = props => (
           </button>
         </li>
         <li>
-          <Link to="/dashboard">
+          <button
+            onClick={() => {
+              props.onOpenArticle('borrow')
+            }}
+          >
             Borrow
-          </Link>
+          </button>
         </li>
         <li>
           <button
