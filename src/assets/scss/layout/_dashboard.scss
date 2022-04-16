@@ -1,0 +1,132 @@
+#dashboard {
+
+    --background: #212121;
+    --secondary-color: #0D7377;
+    --close-color: #682626;
+    --tint-color : #14FFEC;
+    --br-color: #797979;
+
+    $padding-spacing: 30px;
+
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+
+    * {
+        letter-spacing: normal;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    //general styles
+    h1 {
+        font-size: 32px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        margin: 0;
+    }
+
+    nav {
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            padding: 0 30px;
+            font-size: 20px;
+        }
+    }
+
+
+
+    $add-button-size: 60px;
+
+    #add-button {
+        $size: $add-button-size;
+        width: $size;
+        height: $size;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 300ms ease;
+
+        .icon {
+            font-size: 25px;
+            transition: transform 300ms ease;
+        }
+
+        &.shown {
+            background-color: var(--close-color);
+
+            .icon {
+                transform: rotate(-45deg)
+            }
+        }
+    }
+
+
+    #add-menu {
+        width: 400px;
+        height: 350px;
+        background-color: var(--secondary-color);
+        border-radius: 5px;
+        position: fixed;
+        bottom: $padding-spacing + $add-button-size + 15px;
+        right: $padding-spacing;
+        clip-path: inset(100% 0 0 0);
+        transition: clip-path 300ms ease;
+
+        &.shown{
+            clip-path: inset(0 0 0 0)
+        }
+    }
+
+    #switch {
+        button {
+            font-size: 24px;
+            text-transform: capitalize;
+            box-shadow: none;
+            position :relative;
+            border-right: 1px solid var(--br-color);
+            padding: 0 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 90%;
+                left: 50%; 
+                width : calc( 100% - 40px ) ;
+                height: 2px;
+                background-color: var(--tint-color);
+                transform-origin : left; 
+                transform: translateX(-50%) scaleX(0);
+                transition: transform 300ms ease;
+            }
+            &:hover {
+                color: var(--tint-color) !important;
+                background-color: transparent;
+            }
+            &.current {
+                color: var(--tint-color) !important;
+                &::after {
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        button:last-of-type {
+            border-right: none; 
+        }
+    }
+}
+
+.flex {
+    display:flex;
+    &.center-hor {
+        justify-content: center;
+    }
+}
