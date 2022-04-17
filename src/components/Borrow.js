@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Header from '../components/dashboard/Header'
 import AddButton from '../components/dashboard/AddButton'
 import Switch from '../components/dashboard/Switch'
-import borrowerImg from '../images/borrower.png'
+import borrowerImg from '../images/bg.svg'
 import Orders from '../components/dashboard/Orders'
 
 const SWITCH_VALUES = [
