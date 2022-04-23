@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import Header from '../components/dashboard/Header'
 import AddButton from '../components/dashboard/AddButton'
 import Switch from '../components/dashboard/Switch'
 import borrowerImg from '../images/borrower.png'
 import Orders from '../components/dashboard/Orders'
+import { useWallet } from '../context/Wallet'
 
 const SWITCH_VALUES = [
     "all",
@@ -57,22 +57,25 @@ export default function Borrow() {
 
     const [current, setCurrent] = useState(SWITCH_VALUES[0])
 
+    //getting connect
+    const {
+        connect,
+        disconnect,
+        isConnected
+    } = useWallet(); 
+
+    //getting orders
     const orders = useMemo(() => {
         if (current === "all") return FAKE_ORDERS;
         else
             return FAKE_ORDERS.filter(order => order.borrowers === walletAddress)
     }, [current])
 
-    useEffect(() => {
-        console.log(orders)
-    }, [orders])
-
     return (
         <div id="dashboard" >
-
             <div
                 className='flex center-hor flex-auto vertical'
-                style={{justifyContent:'space-between'}}
+                style={{ justifyContent: 'space-between' }}
             >
                 {/* switch */}
                 <Switch
@@ -81,19 +84,21 @@ export default function Borrow() {
                     onChange={(value) => { setCurrent(value) }}
                 />
                 <br />
+
                 {/* orders */}
                 <Orders orders={orders} />
 
                 {/* bottom right button */}
                 <div className='bottom-row'>
-                    <button className="connect">
-                        CONNECT
+                    <button
+                        className={`connect ${isConnected?'disconnect':''}`}
+                        onClick={isConnected?disconnect:connect}
+                    >
+                        {isConnected?"DISCONNECT": "CONNECT"}
                     </button>
                     <AddButton />
                 </div>
             </div>
-
-
         </div>
     )
 }

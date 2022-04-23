@@ -46,6 +46,7 @@
 
     button.connect {
         padding: 7px 30px;
+        width: 200px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         font-size: 20px;
@@ -53,6 +54,10 @@
         box-shadow: none;
         border: 1px solid white;
         border-radius: 0;
+        &.disconnect {
+            color: var(--secondary-hover) !important;
+            border-color: var(--secondary-hover);
+        }
     }
 
     .bottom-row {
@@ -157,7 +162,7 @@
 
     #orders {
         flex: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: 60vh;
         padding-right: 10px;
 

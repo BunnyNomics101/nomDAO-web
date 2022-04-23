@@ -6,8 +6,8 @@ import LoanButton from '../LoanButton'
 function Orders({ orders }) {
     return (
         <div id="orders">
-            {orders.map(order => (
-                <div className='container'>
+            {orders.map((order,index) => (
+                <div className='container' key={index}>
                     <img src={order.image} alt="" />
                     <div className='rows'>
                         <div className='row'>
