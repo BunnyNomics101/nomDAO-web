@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import AddButton from '../components/dashboard/AddButton'
 import Switch from '../components/dashboard/Switch'
 import borrowerImg from '../images/bg.svg'
