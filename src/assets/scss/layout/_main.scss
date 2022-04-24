@@ -13,6 +13,7 @@
 		@include vendor('align-items', 'center');
 		@include vendor('justify-content', 'center');
 		@include vendor('flex-direction', 'column');
+
 		position: relative;
 		max-width: 100%;
 		z-index: 3;
@@ -32,6 +33,7 @@
 			border-radius: _size(border-radius);
 			opacity: 0;
 			max-height: 90vh;
+			flex-direction: column;
 
 			&.timeout {
 				display: none;
