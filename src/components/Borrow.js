@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import AddButton from '../components/dashboard/AddButton'
 import Switch from '../components/dashboard/Switch'
-import borrowerImg from '../images/borrower.png'
+import borrowerImg from '../images/bg.svg'
 import Orders from '../components/dashboard/Orders'
 import { useWallet } from '../context/Wallet'
 
