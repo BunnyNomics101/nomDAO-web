@@ -209,6 +209,31 @@
                 .row {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    .copy-box {
+                        width: 200px;
+                        overflow: hidden;
+                        padding: 8px;
+                        background-color: var(--background);
+                        position:relative;
+                        border-radius: 5px;
+
+                        .copy-button {
+                            position: absolute; 
+                            top: 50%;
+                            right: 3px;
+                            background-color: var(--lighter-color);
+                            transform: translateY(-50%);
+                            padding: 5px;
+                            border-radius: 2px;
+                            cursor:pointer;
+                            &:hover{
+                                background-color: grey;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -376,6 +401,11 @@
     #dashboard {
         #switch button {
             font-size: 20px;
+        }
+        #orders .container .rows .row {
+            h1{
+                margin: 5px 0;
+            }
         }
     }
 }
