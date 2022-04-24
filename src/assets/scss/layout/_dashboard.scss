@@ -35,6 +35,19 @@
         font-weight: 400;
     }
 
+    .capital {
+        text-transform: capitalize;
+    }
+
+    input {
+        outline: none;
+        background-color: white;
+        color: black;
+        &::placeholder{
+            color: grey !important;
+        }
+    }
+
     //specific
 
     nav {
@@ -54,6 +67,7 @@
         box-shadow: none;
         border: 1px solid white;
         border-radius: 0;
+
         &.disconnect {
             color: var(--secondary-hover) !important;
             border-color: var(--secondary-hover);
@@ -281,7 +295,39 @@
 
     #add-menu {
         bottom: 92px;
-        max-width: calc(100% - 32px)
+        max-width: calc(100% - 32px);
+        font-family: 'Montserrat', sans-serif;
+        padding: 25px;
+        font-size: 16px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0px;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        .input {
+            position: relative;
+            button.add {
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                transform: translateY(-50%);
+                background-color: var(--secondary-color);
+                &:hover {
+                    background-color: var(--secondary-hover);
+                }
+                
+            }
+        }
     }
 
     #orders {
@@ -308,7 +354,7 @@
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 500px) {
     #main {
         position: absolute;
         top: 0;
@@ -317,15 +363,17 @@
         height: 100vh;
         flex-direction: row;
         align-items: stretch;
+
         article.active {
             max-height: 100vh;
             height: 100vh;
-            display:flex !important;
-            align-items:stretch
+            display: flex !important;
+            align-items: stretch
         }
     }
+
     #dashboard {
-        #switch button{
+        #switch button {
             font-size: 20px;
         }
     }
