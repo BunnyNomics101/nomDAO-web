@@ -17,12 +17,12 @@ export function useWallet() {
 export function WalletProvider({ children }) {
 
 
-  const [walletAdress, setWalletAdress] = useState(null)
+  const [walletAddress, setWalletAddress] = useState(null)
 
   //tells if a wallet is connected
   const isConnected = useMemo(() => {
-    return walletAdress !== null;
-  }, [walletAdress])
+    return walletAddress !== null;
+  }, [walletAddress])
 
 
   //initially checks if wallet is already connected
@@ -34,7 +34,7 @@ export function WalletProvider({ children }) {
     }
     try {
       const response = await solana.connect({ onlyIfTrusted: true })
-      setWalletAdress(response.publicKey.toString())
+      setWalletAddress(response.publicKey.toString())
     } catch {
       console.log("wallet doesn't trust us yet")
     }
@@ -57,15 +57,16 @@ export function WalletProvider({ children }) {
 
     //connecting on click button
     const response = await solana.connect()
-    setWalletAdress(response.publicKey.toString())
+    setWalletAddress(response.publicKey.toString())
   }
 
   //disconnect button onClick
   const disconnect = () => {
-    setWalletAdress(null)
+    setWalletAddress(null)
   }
 
   const value = {
+    walletAddress,
     connect,
     disconnect,
     isConnected
