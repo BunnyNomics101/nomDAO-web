@@ -38,7 +38,7 @@ export function ConnectionProvider({children}) {
   useEffect(()=>{
     // return if wallet not connected
     if(!walletAddress) return ; 
-    // getProvider()
+    getProvider()
   },[walletAddress])
 
 
