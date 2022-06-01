@@ -25,10 +25,10 @@ export function ConnectionProvider({children}) {
 
   const getProvider = useCallback(()=>{
     const connection = new Connection(network, opts.preflightCommitment)
-    console.log(Provider)
-    const provider = new Provider(connection, window.solana, opts.preflightCommitment)
-    console.log(provider)
-    return provider;
+    // console.log(Provider)
+    // const provider = new Provider(connection, window.solana, opts.preflightCommitment)
+    // console.log(provider)
+    // return provider;
   },[])
 
   const getOrdersList = useCallback(()=>{
