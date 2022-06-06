@@ -25,8 +25,9 @@ export default function AddButton() {
                 <div>
                     {/* prince info */}
                     {Object.keys(PriceInfo).map((item, i) => {
+                        console.log(item, PriceInfo[item])
                         return (
-                            <div className='row' key={i}>
+                            <div className='row'>
                                 <div className="capital"> {item} </div>
                                 <div> {PriceInfo[item]} </div>
                             </div>

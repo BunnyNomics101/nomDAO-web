@@ -5,7 +5,6 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import { WalletProvider } from '../context/Wallet'
-import { ConnectionProvider } from '../context/Connection'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -94,25 +93,23 @@ class IndexPage extends React.Component {
   render() {
     return (
       <WalletProvider>
-        <ConnectionProvider>
-          <Layout location={this.props.location}>
-            <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
-              <div id="wrapper">
-                <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
-                <Main
-                  isArticleVisible={this.state.isArticleVisible}
-                  timeout={this.state.timeout}
-                  articleTimeout={this.state.articleTimeout}
-                  article={this.state.article}
-                  onCloseArticle={this.handleCloseArticle}
-                  setWrapperRef={this.setWrapperRef}
-                />
-                <Footer timeout={this.state.timeout} />
-              </div>
-              <div id="bg"></div>
+        <Layout location={this.props.location}>
+          <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
+            <div id="wrapper">
+              <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+              <Main
+                isArticleVisible={this.state.isArticleVisible}
+                timeout={this.state.timeout}
+                articleTimeout={this.state.articleTimeout}
+                article={this.state.article}
+                onCloseArticle={this.handleCloseArticle}
+                setWrapperRef={this.setWrapperRef}
+              />
+              <Footer timeout={this.state.timeout} />
             </div>
-          </Layout>
-        </ConnectionProvider>
+            <div id="bg"></div>
+          </div>
+        </Layout>
       </WalletProvider>
     )
   }
