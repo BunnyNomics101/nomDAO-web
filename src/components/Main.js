@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import pic01 from '../images/pic01.jpg'
+import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
-import Borrow from './Borrow'
 
 class Main extends React.Component {
   render() {
@@ -23,8 +23,9 @@ class Main extends React.Component {
       >
         <article
           id="bond"
-          className={`${this.props.article === 'bond' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          className={`${this.props.article === 'bond' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Bond</h2>
@@ -42,21 +43,29 @@ class Main extends React.Component {
 
         <article
           id="borrow"
-          className={`${this.props.article === 'borrow' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
-            }`}
-          style={{
-            display: 'none',
-            padding: "4.5rem 2rem 1.5rem 2rem",
-          }}
+          className={`${this.props.article === 'borrow' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
         >
-          <Borrow />
+          <h2 className="major">Borrow</h2>
+          <span className="image main">
+            <img src={pic02} alt="" />
+          </span>
+          <p>
+            I will give so that you may support your family.
+          </p>
+          <p>
+            Whoever believes in nomDAO shall never thirst and his family forever live in peace.
+          </p>
           {close}
         </article>
 
         <article
           id="redeem"
-          className={`${this.props.article === 'redeem' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          className={`${this.props.article === 'redeem' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Redeem</h2>
@@ -64,23 +73,24 @@ class Main extends React.Component {
             <img src={pic03} alt="" />
           </span>
           <p>
-            Don’t keep on wanting money, people have loads and they’re never happy.
+           Don’t keep on wanting money, people have loads and they’re never happy.
           </p>
           {close}
         </article>
 
         <article
           id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          className={`${this.props.article === 'about' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">About</h2>
+           <h2 className="major">About</h2>
           <span className="image main">
             <img src={pic03} alt="" />
           </span>
           <p>
-            Now I am become nom, the connector of souls. The soul of souls.
+             Now I am become nom, the connector of souls. The soul of souls.
           </p>
           {close}
         </article>

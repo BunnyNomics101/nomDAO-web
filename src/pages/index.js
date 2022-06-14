@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import { WalletProvider } from '../context/Wallet'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -22,16 +21,16 @@ class IndexPage extends React.Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.timeoutId = setTimeout(() => {
-      this.setState({ loading: '' });
+        this.setState({loading: ''});
     }, 100);
     document.addEventListener('mousedown', this.handleClickOutside);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
+        clearTimeout(this.timeoutId);
     }
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
@@ -92,25 +91,23 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <WalletProvider>
-        <Layout location={this.props.location}>
-          <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
-            <div id="wrapper">
-              <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
-              <Main
-                isArticleVisible={this.state.isArticleVisible}
-                timeout={this.state.timeout}
-                articleTimeout={this.state.articleTimeout}
-                article={this.state.article}
-                onCloseArticle={this.handleCloseArticle}
-                setWrapperRef={this.setWrapperRef}
-              />
-              <Footer timeout={this.state.timeout} />
-            </div>
-            <div id="bg"></div>
+      <Layout location={this.props.location}>
+        <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
+          <div id="wrapper">
+            <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+            <Main
+              isArticleVisible={this.state.isArticleVisible}
+              timeout={this.state.timeout}
+              articleTimeout={this.state.articleTimeout}
+              article={this.state.article}
+              onCloseArticle={this.handleCloseArticle}
+              setWrapperRef={this.setWrapperRef}
+            />
+            <Footer timeout={this.state.timeout} />
           </div>
-        </Layout>
-      </WalletProvider>
+          <div id="bg"></div>
+        </div>
+      </Layout>
     )
   }
 }
